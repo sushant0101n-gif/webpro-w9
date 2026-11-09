@@ -4,16 +4,290 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 9 GitHub Assignment</title>
+    <title>Sushant Neupane | Week 9 Assignment</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f5f5eb;
+            background-image: radial-gradient(#d9ddce 1px, transparent 1px);
+            background-size: 22px 22px;
+            color: #202c26;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0 25px;
+            border-bottom: 1px solid #d5d9ce;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #205943;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            background: #c9e86b;
+            color: #205943;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Georgia, serif;
+            font-size: 23px;
+        }
+
+        header a {
+            background: #205943;
+            color: white;
+            padding: 14px 22px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        header a:hover {
+            background: #c9e86b;
+            color: #205943;
+        }
+
+        .hero {
+            margin: 85px 0 45px;
+        }
+
+        .tag {
+            color: #e66c4d;
+            font-size: 13px;
+            letter-spacing: 2px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(45px, 8vw, 85px);
+            line-height: 1.05;
+            font-weight: normal;
+            max-width: 850px;
+        }
+
+        h1 span {
+            color: #205943;
+            font-style: italic;
+        }
+
+        .student-card {
+            background: #205943;
+            color: white;
+            padding: 28px;
+            border-left: 5px solid #c9e86b;
+            margin-bottom: 45px;
+        }
+
+        .student-card small {
+            color: #d5f477;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .student-card h2 {
+            font-family: Georgia, serif;
+            font-size: 30px;
+            font-weight: normal;
+            margin: 8px 0;
+        }
+
+        .student-card p {
+            color: #e0e9df;
+            font-size: 14px;
+        }
+
+        .section-title {
+            font-size: 13px;
+            letter-spacing: 2px;
+            color: #65736a;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .project {
+            border-top: 1px solid #bfc8bb;
+            padding: 28px 15px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .number {
+            color: #e66c4d;
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-size: 17px;
+        }
+
+        .project-content {
+            flex: 1;
+        }
+
+        .project h2 {
+            font-family: Georgia, serif;
+            font-size: 27px;
+            font-weight: normal;
+            margin-bottom: 8px;
+        }
+
+        .project p {
+            color: #65736a;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .status {
+            color: #205943;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .bottom {
+            margin-top: 45px;
+            padding: 25px 0;
+            border-top: 1px solid #bfc8bb;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            color: #65736a;
+            font-size: 13px;
+        }
+
+        @media (max-width: 650px) {
+            header a {
+                font-size: 10px;
+                padding: 12px;
+            }
+
+            .hero {
+                margin: 60px 0 35px;
+            }
+
+            .project {
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .project h2 {
+                font-size: 23px;
+            }
+
+            .status {
+                display: none;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-    <h1>Sushant Neupane</h1>
-    <h2>Week 9 Git & GitHub Assignment</h2>
-    <p>Date: November 6, 2026</p>
-<section>
-    <h2>Git Branching Practice</h2>
-    <p>This section was added using a feature branch.</p>
-</section>
+    <div class="container">
+
+        <header>
+            <div class="logo">
+                <span>W</span>
+                WEB PROGRAMMING
+            </div>
+
+            <a href="https://sushant0101n-gif.github.io/web-programming-202537254-/">
+                MAIN WEBSITE ↗
+            </a>
+        </header>
+
+        <section class="hero">
+            <p class="tag">GIT & GITHUB · COURSEWORK</p>
+
+            <h1>
+                Building the web,
+                <span>step by step.</span>
+            </h1>
+        </section>
+
+        <section class="student-card">
+            <small>PREPARED BY</small>
+            <h2>Sushant Neupane</h2>
+            <p>Computer Engineering · Gachon University · 3rd Semester</p>
+        </section>
+
+        <p class="section-title">ASSIGNMENT DETAILS</p>
+
+        <section class="project">
+            <span class="number">01</span>
+
+            <div class="project-content">
+                <h2>Week 9 Git & GitHub Assignment</h2>
+                <p>
+                    Practicing Git, GitHub repositories, version control
+                    and publishing projects using GitHub Pages.
+                </p>
+            </div>
+
+            <span class="status">COMPLETED</span>
+        </section>
+
+        <section class="project">
+            <span class="number">02</span>
+
+            <div class="project-content">
+                <h2>Git Branching Practice</h2>
+                <p>
+                    This section was added using a feature branch.
+                    Practicing branch creation, commits and merging
+                    changes into the main branch.
+                </p>
+            </div>
+
+            <span class="status">COMPLETED</span>
+        </section>
+
+        <section class="project">
+            <span class="number">03</span>
+
+            <div class="project-content">
+                <h2>Assignment Date</h2>
+                <p>November 6, 2026</p>
+            </div>
+
+            <span class="status">WEEK 9</span>
+        </section>
+
+        <footer class="bottom">
+            <span>WEB PROGRAMMING · GACHON UNIVERSITY</span>
+            <span>DESIGNED BY NEUPANE SUSHANT</span>
+        </footer>
+
+    </div>
+
 </body>
 </html>
