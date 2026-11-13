@@ -2,292 +2,372 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sushant Neupane | Week 10_1 Assignment</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sushant Neupane | Web Programming Coursework</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #17243a;
+      --primary: #38bdf8;
+      --text: #f1f5f9;
+      --muted: #a8b7cc;
+      --line: #30415b;
+    }
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-        body {
-            background-color: #f5f5eb;
-            background-image: radial-gradient(#d9ddce 1px, transparent 1px);
-            background-size: 22px 22px;
-            color: #202c26;
-            font-family: Arial, sans-serif;
-            min-height: 100vh;
-        }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-        .container {
-            max-width: 1120px;
-            margin: auto;
-            padding: 20px;
-        }
+    a {
+      color: var(--primary);
+    }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0 25px;
-            border-bottom: 1px solid #d5d9ce;
-        }
+    a:focus-visible {
+      outline: 3px solid #facc15;
+      outline-offset: 4px;
+    }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: #205943;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
+    header {
+      background: #17243a;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
 
-        .logo span {
-            background: #c9e86b;
-            color: #205943;
-            border-radius: 50%;
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: Georgia, serif;
-            font-size: 23px;
-        }
+    .logo {
+      color: var(--primary);
+      font-size: 23px;
+      font-weight: bold;
+      text-decoration: none;
+    }
 
-        header a {
-            background: #205943;
-            color: white;
-            padding: 14px 22px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
+    nav {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
 
-        header a:hover {
-            background: #c9e86b;
-            color: #205943;
-        }
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
 
-        .hero {
-            margin: 85px 0 45px;
-        }
+    nav a:hover {
+      color: var(--primary);
+    }
 
-        .tag {
-            color: #e66c4d;
-            font-size: 13px;
-            letter-spacing: 2px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
+    .hero {
+      text-align: center;
+      padding: 75px 20px 65px;
+      background: linear-gradient(135deg, #111c30, #172c48);
+    }
 
-        h1 {
-            font-family: Georgia, serif;
-            font-size: clamp(45px, 8vw, 85px);
-            line-height: 1.05;
-            font-weight: normal;
-            max-width: 850px;
-        }
+    .hero h1 {
+      font-size: clamp(30px, 5vw, 48px);
+      margin: 12px 0;
+    }
 
-        h1 span {
-            color: #205943;
-            font-style: italic;
-        }
+    .hero h1 span {
+      color: var(--primary);
+    }
 
-        .student-card {
-            background: #205943;
-            color: white;
-            padding: 28px;
-            border-left: 5px solid #c9e86b;
-            margin-bottom: 45px;
-        }
+    .hero p {
+      color: var(--muted);
+      margin: 8px 0;
+    }
 
-        .student-card small {
-            color: #d5f477;
-            letter-spacing: 1px;
-            font-weight: bold;
-        }
+    .hero-link, .button {
+      display: inline-block;
+      margin: 12px 6px 0;
+      padding: 11px 18px;
+      border-radius: 8px;
+      background: var(--primary);
+      color: #071426;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-        .student-card h2 {
-            font-family: Georgia, serif;
-            font-size: 30px;
-            font-weight: normal;
-            margin: 8px 0;
-        }
+    .button.secondary {
+      background: transparent;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+    }
 
-        .student-card p {
-            color: #e0e9df;
-            font-size: 14px;
-        }
+    section {
+      width: min(1080px, 90%);
+      margin: auto;
+      padding: 55px 0;
+    }
 
-        .section-title {
-            font-size: 13px;
-            letter-spacing: 2px;
-            color: #65736a;
-            font-weight: bold;
-            margin-bottom: 18px;
-        }
+    .section-title {
+      font-size: 28px;
+      margin: 0 0 8px;
+    }
 
-        .project {
-            border-top: 1px solid #bfc8bb;
-            padding: 28px 15px;
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
+    .section-intro {
+      color: var(--muted);
+      margin: 0 0 28px;
+    }
 
-        .number {
-            color: #e66c4d;
-            font-family: Georgia, serif;
-            font-style: italic;
-            font-size: 17px;
-        }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
 
-        .project-content {
-            flex: 1;
-        }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px;
+      overflow: hidden;
+    }
 
-        .project h2 {
-            font-family: Georgia, serif;
-            font-size: 27px;
-            font-weight: normal;
-            margin-bottom: 8px;
-        }
+    .card h3 {
+      margin-top: 0;
+      color: var(--primary);
+    }
 
-        .project p {
-            color: #65736a;
-            font-size: 14px;
-            line-height: 1.6;
-        }
+    .card p {
+      color: var(--muted);
+    }
 
-        .status {
-            color: #205943;
-            font-size: 13px;
-            letter-spacing: 1px;
-        }
+    .preview {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      margin: 15px 0;
+    }
 
-        .bottom {
-            margin-top: 45px;
-            padding: 25px 0;
-            border-top: 1px solid #bfc8bb;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 12px;
-            color: #65736a;
-            font-size: 13px;
-        }
+    .tag {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: #243b58;
+      color: #7dd3fc;
+      font-size: 12px;
+      margin: 0 5px 8px 0;
+    }
 
-        @media (max-width: 650px) {
-            header a {
-                font-size: 10px;
-                padding: 12px;
-            }
+    .evidence-list {
+      padding-left: 20px;
+      color: var(--muted);
+    }
 
-            .hero {
-                margin: 60px 0 35px;
-            }
+    .evidence-list li {
+      margin-bottom: 10px;
+    }
 
-            .project {
-                align-items: flex-start;
-                gap: 15px;
-            }
+    .evidence-list a {
+      font-weight: bold;
+    }
 
-            .project h2 {
-                font-size: 23px;
-            }
+    .date {
+      color: #7dd3fc;
+      font-size: 14px;
+    }
 
-            .status {
-                display: none;
-            }
-        }
-    </style>
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      background: #17243a;
+      color: var(--muted);
+      margin-top: 30px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        justify-content: center;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 14px;
+      }
+
+      .hero {
+        padding: 55px 18px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-    <div class="container">
+  <header>
+    <a class="logo" href="#">Sushant.</a>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#assignments">Assignments</a>
+      <a href="#evidence">Git Evidence</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
 
-        <header>
-            <div class="logo">
-                <span>W</span>
-                WEB PROGRAMMING
-            </div>
+  <main>
+    <section class="hero" id="home">
+      <p>WEB PROGRAMMING · COURSEWORK PORTFOLIO</p>
+      <h1>Building the web, <span>step by step.</span></h1>
+      <p>Neupane Sushant</p>
+      <p>Computer Engineering Student · Gachon University</p>
+      <p>Documenting my assignments, projects and GitHub practice.</p>
+      <a class="hero-link" href="#assignments">Explore Assignments</a>
+      <a class="hero-link" href="https://github.com/sushant0101n-gif"
+         target="_blank" rel="noopener noreferrer">My GitHub</a>
+    </section>
 
-            <a href="https://sushant0101n-gif.github.io/web-programming-202537254-/">
-                MAIN WEBSITE ↗
-            </a>
-        </header>
+    <section id="assignments">
+      <h2 class="section-title">Week 10_1 Assignments</h2>
+      <p class="section-intro">
+        Two practical assignments connected to my GitHub repositories
+        and published websites.
+      </p>
 
-        <section class="hero">
-            <p class="tag">GIT & GITHUB · COURSEWORK</p>
+      <div class="grid">
+        <article class="card">
+          <span class="tag">Week 10 · Part 1</span>
+          <h3>Portfolio Assignment</h3>
+          <p>
+            A personal portfolio website presenting my profile,
+            computer engineering background, skills, projects and contact section.
+          </p>
 
-            <h1>
-                Building the web,
-                <span>step by step.</span>
-            </h1>
-        </section>
+          <img class="preview"
+               src="assets/portfolio-home.png"
+               alt="Screenshot of my live portfolio homepage">
 
-        <section class="student-card">
-            <small>PREPARED BY</small>
-            <h2>Sushant Neupane</h2>
-            <p>Computer Engineering · Gachon University · 3rd Semester</p>
-        </section>
+          <p><strong>Repository:</strong> sushant0101n-gif/portfolio</p>
+          <a class="button"
+             href="https://github.com/sushant0101n-gif/portfolio"
+             target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+          <a class="button secondary"
+             href="https://sushant0101n-gif.github.io/portfolio/"
+             target="_blank" rel="noopener noreferrer">Live Website</a>
+        </article>
 
-        <p class="section-title">ASSIGNMENT DETAILS</p>
+        <article class="card">
+          <span class="tag">Week 10 · Part 2</span>
+          <h3>Webpro-W9 Assignment</h3>
+          <p>
+            A coursework webpage created with HTML and CSS.
+            It includes assignment information and GitHub Pages deployment.
+          </p>
 
-        <section class="project">
-            <span class="number">01</span>
+          <p><strong>Repository:</strong> sushant0101n-gif/webpro-w9</p>
+          <a class="button"
+             href="https://github.com/sushant0101n-gif/webpro-w9"
+             target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+          <a class="button secondary"
+             href="https://sushant0101n-gif.github.io/webpro-w9/"
+             target="_blank" rel="noopener noreferrer">Live Website</a>
+        </article>
+      </div>
 
-            <div class="project-content">
-                <h2>Week 10_1 Assignment</h2>
-                <p>
-                    Practicing Git, GitHub repositories, version control
-                    and publishing projects using GitHub Pages.
-                </p>
-            </div>
+      <div class="card" style="margin-top:22px">
+        <span class="tag">Assignment Source Files</span>
+        <h3>Week 10_1 HTML Files</h3>
+        <p>
+          These are the original assignment files stored in my
+          Web Programming course repository.
+        </p>
+        <a class="button"
+           href="https://github.com/sushant0101n-gif/web-programming-202537254-/blob/main/week10_1/task1.html"
+           target="_blank" rel="noopener noreferrer">Open task1.html</a>
+        <a class="button secondary"
+           href="https://github.com/sushant0101n-gif/web-programming-202537254-/blob/main/week10_1/task2.html"
+           target="_blank" rel="noopener noreferrer">Open task2.html</a>
+      </div>
+    </section>
 
-            <span class="status">WEEK 10_1</span>
-        </section>
+    <section id="evidence">
+      <h2 class="section-title">GitHub Work & Evidence</h2>
+      <p class="section-intro">
+        Commit history from my actual GitHub repositories.
+      </p>
 
-        <section class="project">
-            <span class="number">02</span>
+      <div class="grid">
+        <article class="card">
+          <h3>Webpro-W9 Commit History</h3>
+          <p>
+            The repository history records the original Week 9 page,
+            the Git branching practice section, and later style and link updates.
+          </p>
+          <img class="preview"
+               src="assets/webpro-commits.png"
+               alt="GitHub commit history for the Webpro-W9 repository">
+          <p class="date">November 6–9, 2026</p>
+          <a class="button"
+             href="https://github.com/sushant0101n-gif/webpro-w9/commits/main/"
+             target="_blank" rel="noopener noreferrer">View Commit History</a>
+        </article>
 
-            <div class="project-content">
-                <h2>Git Branching Practice</h2>
-                <p>
-                    This section was added using a feature branch.
-                    Practicing branch creation, commits and merging
-                    changes into the main branch.
-                </p>
-            </div>
+        <article class="card">
+          <h3>Week 10_1 Commit History</h3>
+          <p>
+            The course repository records commits for the Week 10_1
+            assignment folder and its submitted files.
+          </p>
+          <img class="preview"
+               src="assets/week10-commits.png"
+               alt="GitHub commit history for the Week 10_1 folder">
+          <p class="date">November 6, 2026</p>
+          <a class="button"
+             href="https://github.com/sushant0101n-gif/web-programming-202537254-/commits/main/week10_1/"
+             target="_blank" rel="noopener noreferrer">View Commit History</a>
+        </article>
+      </div>
 
-            <span class="status">COMPLETED</span>
-        </section>
+      <div class="card" style="margin-top:22px">
+        <h3>Selected Commit Records</h3>
+        <ul class="evidence-list">
+          <li><strong>da89ec8</strong> — Create Week 9 assignment HTML page</li>
+          <li><strong>a2f3d76</strong> — Add Git branching practice section</li>
+          <li><strong>fa4313a</strong> — changing style</li>
+          <li><strong>34b3e96</strong> — handling error in links</li>
+        </ul>
+        <p>
+          These commit records show the development and updates
+          made to the Webpro-W9 assignment.
+        </p>
+      </div>
+    </section>
 
-        <section class="project">
-            <span class="number">03</span>
+    <section id="about">
+      <h2 class="section-title">About This Coursework</h2>
+      <div class="card">
+        <p>
+          I am a Computer Engineering student at Gachon University.
+          This page collects my Web Programming coursework and provides
+          direct access to my source code, deployed projects and GitHub history.
+        </p>
+        <p>
+          The purpose is to show the actual work completed during the course,
+          along with links that can be opened and checked.
+        </p>
+      </div>
+    </section>
+  </main>
 
-            <div class="project-content">
-                <h2>Assignment Date</h2>
-                <p>November 6, 2026</p>
-            </div>
-
-            <span class="status">WEEK 10_1</span>
-        </section>
-
-        <footer class="bottom">
-            <span>WEB PROGRAMMING · GACHON UNIVERSITY</span>
-            <span>DESIGNED BY NEUPANE SUSHANT</span>
-        </footer>
-
-    </div>
+  <footer>
+    <p>Web Programming · Gachon University</p>
+    <p>Prepared by Neupane Sushant</p>
+  </footer>
 
 </body>
 </html>
